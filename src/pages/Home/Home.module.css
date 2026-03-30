@@ -1,60 +1,15 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #000;
-  gap: 24px;
+  padding: 8px 0;
 }
 
-.title {
-  color: #fff;
+.heading {
   font-size: 2rem;
-}
-
-.userCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 24px 32px;
-  background: #111;
-  border-radius: 12px;
-}
-
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.name {
-  color: #fff;
-  font-size: 1.2rem;
   font-weight: 700;
-  margin: 0;
-}
-
-.email {
-  color: #aaa;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.logoutBtn {
-  padding: 10px 28px;
-  background: transparent;
   color: #fff;
-  border: 2px solid #fff;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s;
+  margin-bottom: 8px;
 }
 
-.logoutBtn:hover {
-  background: #fff;
-  color: #000;
+.sub {
+  color: #aaa;
+  font-size: 1rem;
 }
