@@ -1,7 +1,5 @@
 .appBarContainer {
   flex-grow: 1;
-  padding: 8px;
-  border: -8px;
 }
 
 .app-svg {
@@ -25,7 +23,7 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-
+  min-height: 64px !important;
 }
 
 .appBar {

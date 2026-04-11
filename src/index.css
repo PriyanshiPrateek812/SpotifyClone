@@ -1,4 +1,34 @@
-body{
-    background-color: black;
-    margin: 0;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+}
+.layout {
+  display: grid;
+  height: 100vh;
+  gap: 8px;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "left   middle  right";
+
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.left {
+  grid-area: left;
+  height: 100%;
+  display: flex;
+}
+
+.middle {
+  grid-area: middle;
+}
+
+.right {
+  grid-area: right;
 }

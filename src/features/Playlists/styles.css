@@ -1,7 +1,6 @@
 .drawer {
   flex-shrink: 0;
 }
-
 .drawer .MuiDrawer-paper {
   background-color: #121212;
   color: #fff;

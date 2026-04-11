@@ -1,0 +1,40 @@
+.middle-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.uppernavbutton {
+    border-radius: 999px;
+    padding: 10px 15px; /* a bit more horizontal padding looks better */
+    color: white;
+    background-color: rgba(128, 128, 128, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-content: center; 
+}
+
+/* Hover effect */
+.uppernavbutton:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* slightly whitish */
+}
+
+/* Selected state */
+.uppernavbutton.active {
+    background-color: white;
+    color: black;
+}
+.upperNav{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.list{
+    height: 50px;
+    width: 150px;
+}
+.list-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    gap: 16px; /* MUI gap={2} ≈ 16px */
+}

@@ -24,11 +24,22 @@ export default function Playlists(){
   };
 
   return (
+    <div className="playlists">
     <Drawer
       variant="permanent"
       className="drawer"
-      style={{
-        width: open ? 280 : 70,
+      sx={{
+        height: "100%",   // ✅ VERY IMPORTANT
+        flexShrink: 0,
+      }}
+      PaperProps={{
+        sx: {
+          position: "relative",
+          // height: "100%",     // 🔥 THIS is missing
+          width: open ? 280 : 70,
+          // display: "flex",
+          // flexDirection: "column"
+        }
       }}
     >
       <Box className="toggleBox">
@@ -76,5 +87,6 @@ export default function Playlists(){
         </ListItem>
       </List>
     </Drawer>
+    </div>
   );
 }
