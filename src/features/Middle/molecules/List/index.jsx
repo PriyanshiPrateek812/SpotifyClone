@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
+import styles from "../../middle.module.css";
 const cards = [
   {
     id: 1,
@@ -17,7 +17,7 @@ const cards = [
 export default function List(){
     const [selectedCard, setSelectedCard] = React.useState(0);
     return(
-        <Box className="list-container">
+        <Box className={styles["list-container"]}>
       {cards.map((card, index) => (
         <Card key={card.id}>
           <CardActionArea
@@ -33,7 +33,7 @@ export default function List(){
               },
             }}
           >
-            <div className="upperNav list">
+            <div className={`${styles.upperNav} ${styles.list}`}>
                 <img width="50px" height="50px" src="album.webp"/>                
                 <Typography>
                     {card.title}

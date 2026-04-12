@@ -5,21 +5,16 @@ html, body, #root {
 }
 .layout {
   display: grid;
-  height: 100vh;
-  gap: 8px;
-  grid-template-areas:
-    "navbar navbar navbar"
-    "left   middle  right";
-
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
-  grid-area: navbar;
+  height: 64px;
 }
 
-.left {
+/* .left {
   grid-area: left;
   height: 100%;
   display: flex;
@@ -27,8 +22,12 @@ html, body, #root {
 
 .middle {
   grid-area: middle;
+} */
+.middle{
+  flex: 1;
 }
-
-.right {
-  grid-area: right;
+.main{
+  /* flex: right; */
+  display: flex;
+  flex: 1;
 }

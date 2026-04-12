@@ -10,7 +10,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import '../styles.css';
+import styles from "../navbar.module.css"
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SearchBar from '../molecules/SearchBar'
 export default function PrimarySearchAppBar() {
@@ -112,16 +112,16 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box className="appBarContainer">
-      <AppBar position="static" className="appBar">
-        <Toolbar className="appTool">
+    <Box className={styles.appBarContainer}>
+      <AppBar position="static" className={styles.appBar}>
+        <Toolbar className={styles.appTool}>
           
-          <img className="app-svg" src="/music.svg" alt="menu" />
-          <HomeRoundedIcon className="home-button"/>
+          <img className={styles["app-svg"]} src="/music.svg" alt="menu" />
+          <HomeRoundedIcon className={styles["home-button"]}/>
           
           <SearchBar />
           
-          <Box className="desktopMenu">
+          <Box className={styles.desktopMenu}>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -143,7 +143,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box className="mobileMenu">
+          <Box className={styles.mobileMenu}>
             <IconButton
               size="large"
               aria-label="show more"

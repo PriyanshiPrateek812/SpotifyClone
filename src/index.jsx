@@ -9,12 +9,11 @@ export default function Home(){
                 <NavBar />
             </div>
 
-            <div className="left">
+            <div className="main">
                 <Playlists />
-            </div>
-
-            <div className="middle">
-                <Middle />
+                <div className="middle">
+                <Middle/>
+                </div>
             </div>
 
             <div className="right">

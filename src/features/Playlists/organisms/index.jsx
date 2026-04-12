@@ -11,7 +11,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import Box from '@mui/material/Box';
-import "../styles.css"
+import styles from "../playlists.module.css"
 
 const DRAWER_WIDTH = 280;
 const COLLAPSED_WIDTH = 70;
@@ -22,68 +22,74 @@ export default function Playlists(){
   const toggleDrawer = () => {
     setOpen(!open);
   };
-
+  console.log("Styles: "+JSON.stringify(styles, null, 2));
   return (
-    <div className="playlists">
+    <div className={styles.playlists}>
     <Drawer
       variant="permanent"
-      className="drawer"
+      className={styles.drawer}
       sx={{
-        height: "100%",   // ✅ VERY IMPORTANT
         flexShrink: 0,
-      }}
-      PaperProps={{
-        sx: {
-          position: "relative",
-          // height: "100%",     // 🔥 THIS is missing
+        '& .MuiDrawer-paper': {
+          backgroundColor: '#121212',
+          color: '#fff',
           width: open ? 280 : 70,
-          // display: "flex",
-          // flexDirection: "column"
+          transition: 'width 0.3s ease',
+          overflowX: 'hidden',
+          boxSizing: 'border-box',
+          position: 'relative',
         }
       }}
+      // PaperProps={{
+      //   sx: {
+      //     // position: "relative",
+      //     height: "100%",
+      //     width: open ? 280 : 70,
+      //   }
+      // }}
     >
-      <Box className="toggleBox">
-        <IconButton onClick={toggleDrawer} className="toggleButton">
+      <Box className={styles.toggleBox}>
+        <IconButton onClick={toggleDrawer} className={styles.toggleButton}>
           <ChevronLeftIcon />
         </IconButton>
       </Box>
 
-      <List className="list">
+      <List className={styles.list}>
         <ListItem 
           button 
-          className={`listItem ${open ? 'listItemOpen' : 'listItemCollapsed'}`}
+          className={`${styles.listItem} ${open ? styles.listItemOpen : styles.listItemCollapsed}`}
         >
-          <ListItemIcon className={`listItemIcon ${!open ? 'listItemIconCollapsed' : ''}`}>
+          <ListItemIcon className={`${styles.listItemIcon} ${!open ? styles.listItemIconCollapsed : ''}`}>
             <HomeIcon />
           </ListItemIcon>
-          {open && <ListItemText primary="Home" className="listItemText" />}
+          {open && <ListItemText primary="Home" className={styles.listItemText} />}
         </ListItem>
         <ListItem 
           button 
-          className={`listItem ${open ? 'listItemOpen' : 'listItemCollapsed'}`}
+          className={`${styles.listItem} ${open ? styles.listItemOpen : styles.listItemCollapsed}`}
         >
-          <ListItemIcon className={`listItemIcon ${!open ? 'listItemIconCollapsed' : ''}`}>
+          <ListItemIcon className={`${styles.listItemIcon} ${!open ? styles.listItemIconCollapsed : ''}`}>
             <SearchIcon />
           </ListItemIcon>
-          {open && <ListItemText primary="Search" className="listItemText" />}
+          {open && <ListItemText primary="Search" className={styles.listItemText} />}
         </ListItem>
         <ListItem 
           button 
-          className={`listItem ${open ? 'listItemOpen' : 'listItemCollapsed'}`}
+          className={`${styles.listItem} ${open ? styles.listItemOpen : styles.listItemCollapsed}`}
         >
-          <ListItemIcon className={`listItemIcon ${!open ? 'listItemIconCollapsed' : ''}`}>
+          <ListItemIcon className={`${styles.listItemIcon} ${!open ? styles.listItemIconCollapsed : ''}`}>
             <FavoriteBorderIcon />
           </ListItemIcon>
-          {open && <ListItemText primary="Liked Songs" className="listItemText" />}
+          {open && <ListItemText primary="Liked Songs" className={styles.listItemText} />}
         </ListItem>
         <ListItem 
           button 
-          className={`listItem ${open ? 'listItemOpen' : 'listItemCollapsed'}`}
+          className={`${styles.listItem} ${open ? styles.listItemOpen : styles.listItemCollapsed}`}
         >
-          <ListItemIcon className={`listItemIcon ${!open ? 'listItemIconCollapsed' : ''}`}>
+          <ListItemIcon className={`${styles.listItemIcon} ${!open ? styles.listItemIconCollapsed : ''}`}>
             <QueueMusicIcon />
           </ListItemIcon>
-          {open && <ListItemText primary="Your Library" className="listItemText" />}
+          {open && <ListItemText primary="Your Library" className={styles.listItemText} />}
         </ListItem>
       </List>
     </Drawer>
