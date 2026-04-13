@@ -6,9 +6,11 @@ import DailyMix from "../molecules/DailyMix";
 export default function Middle(){
   return (
     <div className={styles["middle-container"]}>
-    <UpperNav />
-    <List />
-    <DailyMix />
+      <div className={styles.middleBox}> 
+        <UpperNav />
+        <List />
+        <DailyMix />
+      </div>
     </div>
   );
 }
