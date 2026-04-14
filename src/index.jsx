@@ -1,6 +1,7 @@
-import Playlists from "./features/Playlists/organisms/index";
+import Playlists from "./features/LeftSideBar/organisms/index";
 import NavBar from "./features/NavBar/organisms/index";
 import Middle from "./features/Middle/organisms/index";
+import Music from "./features/RightSideBar/organisms";
 import "./index.css"
 export default function Home(){
     return(
@@ -14,6 +15,7 @@ export default function Home(){
                 <div className="middle">
                 <Middle/>
                 </div>
+                <Music />
             </div>
 
             <div className="right">

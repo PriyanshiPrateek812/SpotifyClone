@@ -1,0 +1,69 @@
+.toggleBox {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggleButton {
+  color: #fff !important;
+}
+
+.toggleButton svg {
+  color: #fff;
+}
+
+.toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.list {
+  width: 100%;
+}
+
+.listItem {
+  transition: justify-content 0.3s ease;
+}
+
+.listItemOpen {
+  justify-content: flex-start;
+}
+
+.listItemCollapsed {
+  justify-content: center;
+}
+
+.listItemIcon {
+  color: #fff !important;
+  min-width: 40px !important;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItemIcon svg {
+  color: #fff !important;
+  font-size: 24px;
+}
+
+.listItemIconCollapsed {
+  margin-right: 0;
+  min-width: 40px !important;
+}
+
+.listItemText {
+  color: #fff;
+}
+.musicContainer{
+  padding: 10px;
+}
+.songDetailsCardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.songDetailsbuttons {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}

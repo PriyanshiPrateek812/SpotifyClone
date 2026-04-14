@@ -11,12 +11,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import Box from '@mui/material/Box';
-import styles from "../playlists.module.css"
-
+import styles from "../music.module.css"
+import { Typography } from '@mui/material';
+import AlbumPicture from '../molecules/Album'
+import SongDetailsCard from '../molecules/SongDetailsCard';
+import Credits from '../molecules/Credits';
+import Queue from '../molecules/Queue';
 const DRAWER_WIDTH = 280;
 const COLLAPSED_WIDTH = 70;
 
-export default function Playlists(){
+export default function Music(){
   const [open, setOpen] = useState(true);
 
   const toggleDrawer = () => {
@@ -33,28 +37,37 @@ export default function Playlists(){
         '& .MuiDrawer-paper': {
           backgroundColor: '#121212',
           color: '#fff',
-          width: open ? 280 : 70,
+          width: open ? 320 : 70,
           transition: 'width 0.3s ease',
           overflowX: 'hidden',
           boxSizing: 'border-box',
           position: 'relative',
         }
       }}
-      // PaperProps={{
-      //   sx: {
-      //     // position: "relative",
-      //     height: "100%",
-      //     width: open ? 280 : 70,
-      //   }
-      // }}
     >
-      <Box className={styles.toggleBox}>
+        <Box className={styles.toggleBox}>
+            <IconButton onClick={toggleDrawer} className={styles.toggleButton}>
+            <ChevronLeftIcon />
+            </IconButton>
+        </Box>
+        {open?
+            <div className={styles.musicContainer}>
+                <Typography>Music name</Typography>
+                <AlbumPicture />
+                <SongDetailsCard />
+                <Credits />
+                <Queue />
+            </div>
+            :
+            <></>
+        }
+      {/* <Box className={styles.toggleBox}>
         <IconButton onClick={toggleDrawer} className={styles.toggleButton}>
           <ChevronLeftIcon />
         </IconButton>
-      </Box>
+      </Box> */}
 
-      <List className={styles.list}>
+      {/* <List className={styles.list}>
         <ListItem 
           button 
           className={`${styles.listItem} ${open ? styles.listItemOpen : styles.listItemCollapsed}`}
@@ -91,7 +104,7 @@ export default function Playlists(){
           </ListItemIcon>
           {open && <ListItemText primary="Your Library" className={styles.listItemText} />}
         </ListItem>
-      </List>
+      </List> */}
     </Drawer>
     </div>
   );

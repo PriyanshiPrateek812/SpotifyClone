@@ -13,6 +13,14 @@ const cards = [
     id: 2,
     title: 'Animals',
   },
+  {
+    id: 3,
+    title: 'Go Go Go!',
+  },
+  {
+    id: 4,
+    title: 'Sugar',
+  },
 ];
 export default function List(){
     const [selectedCard, setSelectedCard] = React.useState(0);
